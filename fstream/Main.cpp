@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <conio.h>
+#include "windows.h"
 
 void file_insert(std::string path, int pos, std::string str) {
 	// Шаг 1. Копируем содержимое файла в строку tmp.
@@ -29,6 +31,10 @@ void file_insert(std::string path, int pos, std::string str) {
 	out << tmp;
 	out.close();
 }
+
+
+const int tick = 100;
+int timer = 0; //отслеживает прошедшее время
 
 int main() {
 	setlocale(LC_ALL, "Russian");
@@ -73,9 +79,7 @@ int main() {
 	file_insert(path, n, str);*/
 
 	//Задача 1. Дата из файла
-
-
-	std::ifstream in;
+	/*std::ifstream in;
 	in.open("date.txt");
 	if (in.is_open()) {
 		int day, month, year;
@@ -94,8 +98,44 @@ int main() {
 	else
 		std::cout << "Ошибка открытия файла!\n\n";
 
-	in.close();
+	in.close();*/
 	
+	//Задача 2. 
+	/*char key;
+	//std::cin >> key;
+	while (true) {
+		if (_kbhit()) { //keyboard hit
+			key = _getch();
+
+			switch (key) {
+			case 'A': case 'a':
+				std::cout << "LEFT\n";
+				break;
+			case 'D': case 'd':
+				std::cout << "RIGHT\n";
+				break;
+			}
+		}
+		std::cout << ".\n";
+		Sleep(tick);
+		timer += tick;
+		if (timer >= 1000) {
+			std::cout << ".\n";
+				timer = 0;
+		}
+	}*/
+
+	//Задача 3.
+
+	std::cout << "Введите число: ";
+	std::cin >> n;
+	system("cls"); //полная очистка консоли
+	std::cout << "Число = " << n << "\n";
+
+
+	system("pause"); //приостановка приложения до тех пор пока не нажать на клавишу
+
+
 
 
 	return 0;
